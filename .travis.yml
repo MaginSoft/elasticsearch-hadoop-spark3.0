@@ -14,4 +14,4 @@ before_install:
  - export JAVA_OPTS="-Xmx2048m -XX:MaxPermSize=386m"
  - export JAVA8_HOME=$(update-alternatives --list java | grep java-8-oracle | sed 's|/bin/java$||' | sed 's|/jre$||')
 
-install: ./gradlew assemble -Pskip.signing updateSHAs
+install: ./gradlew -DskipTests=true build --info --stacktrace
